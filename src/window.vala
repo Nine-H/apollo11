@@ -7,6 +7,9 @@ class Window : Gtk.Window {
         this.set_border_width ( 12 );
         this.destroy.connect ( Gtk.main_quit );
         
+        var header = new ApolloHeader ();
+        this.set_titlebar ( header );
+        
         this.add ( new HelloHouston(Gtk.Orientation.VERTICAL, 0) );
         
         show_all ();

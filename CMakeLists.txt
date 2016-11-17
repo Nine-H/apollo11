@@ -31,6 +31,7 @@ ensure_vala_version("0.16" MINIMUM)
 include(ValaPrecompile)
 vala_precompile(VALA_C ${EXEC_NAME}
     src/hello_houston.vala
+    src/header.vala
     src/window.vala
     src/apollo11.vala
     
