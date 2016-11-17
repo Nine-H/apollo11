@@ -19,7 +19,10 @@ set (VERSION_INFO "space_age")
 
 find_package(PkgConfig)
 
-pkg_check_modules(DEPS REQUIRED gtk+-3.0)
+pkg_check_modules(DEPS REQUIRED
+    gtk+-3.0
+    granite
+)
 
 add_definitions(${DEPS_CFLAGS})
 link_libraries(${DEPS_LIBRARIES})
