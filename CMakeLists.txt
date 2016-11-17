@@ -1,7 +1,3 @@
-#fucking terrible way to input:
-#valac src/hello_houston.vala src/window.vala src/apollo11.vala --pkg gtk+-3.0 --pkg granite -o apollo11
-#into the commandline
-
 project (apollo11)
 cmake_minimum_required (VERSION 2.6)
 
