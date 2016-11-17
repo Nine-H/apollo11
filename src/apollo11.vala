@@ -1,7 +1,7 @@
 using Gtk;
 
-class Apollo11App : Granite.Application () {
-    public Apollo11 () {
+class Apollo11App : Granite.Application {
+    public Apollo11App () {
         new Window ();
     }
     
