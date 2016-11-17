@@ -1,0 +1,35 @@
+<schemalist>
+    <schema id="com.github.nine-h.apollo11" path="/com/github/nine-h/apollo11/" gettext-domain="apollo11">
+        
+        <key name ="first-run" type="b">
+            <default>true</default>
+            <summary>Is this the first time the software has been run?</summary>
+            <description>Is this the first time the software has been run?</description>
+        </key>
+        
+        <key name ="window-height" type="i">
+            <default>200</default>
+            <summary>The saved height of the window.</summary>
+            <description>The saved height of the window.</description>
+        </key>
+        
+        <key name ="window-width" type="i">
+            <default>200</default>
+            <summary>The saved width of the window.</summary>
+            <description>The saved width of the window.</description>
+        </key>
+
+        <key name ="window-x" type="i">
+            <default>200</default>
+            <summary>The saved horizontal position of the window.</summary>
+            <description>The saved horizontal position of the window.</description>
+        </key>
+        
+        <key name ="window-y" type="i">
+            <default>200</default>
+            <summary>The saved vertical position of the window.</summary>
+            <description>The saved vertical position of the window.</description>
+        </key>
+        
+    </schema>
+</schemalist>
