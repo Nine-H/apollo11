@@ -8,6 +8,6 @@ class Apollo11App : Granite.Application {
     public static int main ( string [] args ) {
         Gtk.init ( ref args );
         var app = new Apollo11App ();
-        return app.run (args);
+        return app.run ( args );
     }
 }

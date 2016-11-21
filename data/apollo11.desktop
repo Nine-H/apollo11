@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Apollo11
+GenericName=Hello World App
+Comment=Hello, Houston
+Categories=GTK;Utility;Developer;
+Exec=apollo11
+Icon=application-default-icon
+Terminal=false
+Type=Application
+X-GNOME-Gettext-Domain=apollo11
+Keywords=Hello;World;Example;

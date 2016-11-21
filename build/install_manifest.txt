@@ -1,3 +1,0 @@
-/usr/bin/apollo11
-/usr/share/applications/apollo11.desktop
-/usr/share/glib-2.0/schemas/com.github.nine-h.apollo11.gschema.xml

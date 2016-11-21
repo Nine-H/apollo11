@@ -1,3 +1,0 @@
-# Hashes of file build rules.
-82e3eaa1df590c201d878d1f79bb674f apollo11_valac.stamp
-ee433b2fde82a2b6ab5a1bcf27b56924 src/hello_houston.c

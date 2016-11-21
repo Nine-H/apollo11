@@ -43,8 +43,5 @@ PACKAGES
 add_executable(${EXEC_NAME} ${VALA_C})
 
 install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)
-install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/apollo11.desktop DESTINATION ${DATADIR}/applications/)
 
-include (GSettings)
-add_schema ("data/com.github.nine-h.apollo11.gschema.xml")
-
+#install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/hello.desktop DESTINATION ${DATADIR}/applications/)

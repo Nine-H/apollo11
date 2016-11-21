@@ -7,6 +7,5 @@ Apollo11 is a framework project for elementary OS, hopefully good enough I can s
 The ultimate goal is to develop a skeleton to save developers starting from tabula rasa for every new project and allow them to expect to be able to publish from T minus zero.
 
 ###features.
-* CMake build setup.
-* Requires only elementary-sdk.
-* Window with HeaderBar.
+* CMake builds with only elementary-sdk.
+* Headerbar already set up.
