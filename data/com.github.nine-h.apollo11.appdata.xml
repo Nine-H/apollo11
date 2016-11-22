@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2016 Nine-H <nine.gentooman@gmail.com> -->
+<component type="desktop">
+  <id>com.github.nine-h.apollo11.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_group>elementary</project_group>
+  <project_license>GPL-3.0+</project_license>
+  <_name>Apollo11</_name>
+  <_summary>Kickass framework for elementary apps.</_summary>
+  <description>
+    <_p>
+      Apollo11 is a skeleton app for elementary OS, made because I was sick of putting in hours to pop a window when I wanted to do a weekend project. May be the best thing since sliced bread or the worst thing since brussels sprouts, depending.
+    </_p>
+  </description>
+  <releases>
+    <release timestamp="1427915704" version="0.0.1"/>
+  </releases>
+  <provides>
+    <binary>apollo11</binary>
+  </provides>
+  <developer_name>Nine-H</developer_name>
+  <url type="homepage">https://github.com/Nine-H/apollo11</url>
+  <url type="bugtracker">https://github.com/Nine-H/apollo11/issues</url>
+  <url type="donation">email me I'll give you a bitcoin address :D</url>
+  <url type="help">https://github.com/Nine-H/apollo11</url>
+  <update_contact>nine.gentooman_at_gmail.com</update_contact>
+</component>
