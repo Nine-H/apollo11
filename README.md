@@ -15,17 +15,20 @@ The ultimate goal is to develop a skeleton to save developers starting from tabu
 ###get it:
 install the elementary OS SDK
 
-```sudo apt install elementary-sdk
+```
+sudo apt install elementary-sdk
 ```
 
 clone the Apollo11 repository
-```git clone https://github.com/Nine-H/apollo11.git
+```
+git clone https://github.com/Nine-H/apollo11.git
 cd apollo11
 ```
 
 build the project
 
-```mkdir build && cd build
+```
+mkdir build && cd build
 cmake -DCMAKE_INSTALL_PREFIX=/usr ../
 make
 sudo make install
