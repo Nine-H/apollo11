@@ -9,3 +9,8 @@ Terminal=false
 Type=Application
 X-GNOME-Gettext-Domain=apollo11
 Keywords=Hello;World;Example;
+Actions=About;
+
+[Desktop Action About]
+Exec=apollo11 --about
+Name=About Apollo11

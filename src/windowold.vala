@@ -36,12 +36,10 @@ class Window : Gtk.Window {
     }
     
     private void quit () {
-        int x = 0; int y = 0;
-        this.get_position ( out x, out y );
+        this.get_position ( out int x, out int y );
         settings.set_int ( "window-x", x );
         settings.set_int ( "window-y", y );
-        int w = 0; int h = 0;
-        this.get_size( out w, out h );
+        this.get_size( out int w, out int h );
         settings.set_int ( "window-width", w );
         settings.set_int ( "window-height", h );
         
