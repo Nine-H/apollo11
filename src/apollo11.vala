@@ -1,6 +1,7 @@
 using Gtk;
 
 class Apollo11App : Granite.Application {
+    private Window window;
     construct {
         //a full list of fields can be found at
         //https://valadoc.org/granite/Granite.Application.html
@@ -11,17 +12,25 @@ class Apollo11App : Granite.Application {
         main_url = "https://github.com/Nine-H/apollo11";
         bug_url = "https://github.com/Nine-H/apollo11/issues";
         translate_url = "https://github.com/Nine-H/apollo11";
-        about_authors = { "Nine H <nine.gentooman@gmail.com>", null };
+        about_authors = { "Nine H <nine.gentooman@gmail.com>" };
         about_license_type = Gtk.License.GPL_3_0;
-    }    
+    }
+    
+    public override void activate () {
+        if ( window == null ) {
+            window = new Window ();
+        } else {
+            window.present ();
+        }
+    }
     
     public Apollo11App () {
-        new Window ();
+        // Humm.
     }
     
     public static int main ( string [] args ) {
         Gtk.init ( ref args );
         var app = new Apollo11App ();
-        return app.run ( args );
+        return app.run (args);
     }
 }
