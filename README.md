@@ -11,6 +11,7 @@ The ultimate goal is to develop a skeleton to save developers starting from tabu
 * Window with HeaderBar.
 * Window position saving and GSettings support.
 * AppData.xml for publishing in appcenter.
+* Granite.Application about window.
 
 ###get it:
 install the elementary OS SDK

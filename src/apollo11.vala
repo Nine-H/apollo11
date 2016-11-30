@@ -9,19 +9,17 @@ class Apollo11App : Granite.Application {
         exec_name = "apollo11";
         app_years = "2016";
         app_launcher =  "apollo11.desktop";
+        application_id = "com.github.nine-h.apollo11";
         main_url = "https://github.com/Nine-H/apollo11";
         bug_url = "https://github.com/Nine-H/apollo11/issues";
         translate_url = "https://github.com/Nine-H/apollo11";
         about_authors = { "Nine H <nine.gentooman@gmail.com>" };
         about_license_type = Gtk.License.GPL_3_0;
+        about_comments = "The best damn app framework for elementary OS on this or any other planet.";
     }
     
     public override void activate () {
-        if ( window == null ) {
-            window = new Window ();
-        } else {
-            window.present ();
-        }
+        window = new Window ();
     }
     
     public Apollo11App () {

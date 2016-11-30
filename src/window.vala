@@ -1,33 +1,27 @@
-using Gtk;
-
 class Window : Gtk.Window {
-    private GLib.Settings settings;
+    private Settings settings;
+    
+    private int window_width = 0;
+    private int window_height = 0;
     
     public Window () {
-        settings = new GLib.Settings ("com.github.nine-h.apollo11");
+        settings = new Settings ("com.github.nine-h.apollo11");
+        window_width = settings.get_int ("window-width");
+        window_height = settings.get_int ("window-height");
+        this.set_default_size ( window_width, window_height );
         
-        //FIXME debug
-        stdout.printf ( "window-height: %i\n", settings.get_int ("window-height") );
-        stdout.printf ( "window-width: %i\n", settings.get_int ("window-width") );
-        stdout.printf ( "window-x: %i\n", settings.get_int ("window-x") );
-        stdout.printf ( "window-y: %i\n", settings.get_int ("window-y") );
-        //!debug
-        
-        this.move ( settings.get_int ("window-x"),
-                    settings.get_int ("window-y") );
-        
-        if ( settings.get_boolean ("first-run") ) {
-            this.set_position ( Gtk.WindowPosition.CENTER );
-            settings.set_boolean ( "first-run", false );
-        }
-        
-        this.resize ( settings.get_int ("window-width"),
-                      settings.get_int ("window-height") );
-        this.set_border_width ( 12 );
-        this.destroy.connect ( quit );
+        //var position = settings.get_strv ("position");
+        this.set_position ( Gtk.WindowPosition.CENTER );
         
         var header = new ApolloHeader ();
         this.set_titlebar ( header );
+
+        this.set_border_width ( 12 );
+        this.destroy.connect ( Gtk.main_quit );
+        this.delete_event.connect (() => {
+            on_quit ();
+            return false;
+        }); //FIXME: why does this have to be a fucking lamda?
         
         this.add ( new HelloHouston(Gtk.Orientation.VERTICAL, 0) );
         
@@ -35,24 +29,10 @@ class Window : Gtk.Window {
         Gtk.main ();
     }
     
-    private void quit () {
-        int x = 0; int y = 0;
-        this.get_position ( out x, out y );
-        settings.set_int ( "window-x", x );
-        settings.set_int ( "window-y", y );
-        int w = 0; int h = 0;
-        this.get_size( out w, out h );
-        settings.set_int ( "window-width", w );
-        settings.set_int ( "window-height", h );
-        
-        //FIXME debug
-        stdout.printf ( "saved window-height: %i\n", settings.get_int ("window-height") );
-        stdout.printf ( "saved window-width: %i\n", settings.get_int ("window-width") );
-        stdout.printf ( "saved window-x: %i\n", settings.get_int ("window-x") );
-        stdout.printf ( "saved window-y: %i\n", settings.get_int ("window-y") );
-        //!debug
-        
+    private void on_quit () {
+        this.get_size (out window_width, out window_height);
+        settings.set_int ("window-width", window_width);
+        settings.set_int ("window-height", window_height);
         stdout.printf ( "thank you for playing wing commander :D\n" );
-        Gtk.main_quit ();
     }
 }
