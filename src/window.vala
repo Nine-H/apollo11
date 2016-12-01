@@ -3,6 +3,8 @@ class Window : Gtk.Window {
     
     private int window_width = 0;
     private int window_height = 0;
+    private int window_x = 0;
+    private int window_y = 0;
     
     public Window () {
         settings = new Settings ("com.github.nine-h.apollo11");
@@ -10,8 +12,14 @@ class Window : Gtk.Window {
         window_height = settings.get_int ("window-height");
         this.set_default_size ( window_width, window_height );
         
-        //var position = settings.get_strv ("position");
-        this.set_position ( Gtk.WindowPosition.CENTER );
+        window_x = settings.get_int ("window-x");
+        window_y = settings.get_int ("window-y");
+        if ( settings.get_boolean ("first-run") ) {
+            this.set_position ( Gtk.WindowPosition.CENTER );
+            settings.set_boolean ("first-run", false);
+        } else {
+            this.move ( window_x, window_y );
+        }
         
         var header = new ApolloHeader ();
         this.set_titlebar ( header );
@@ -33,6 +41,9 @@ class Window : Gtk.Window {
         this.get_size (out window_width, out window_height);
         settings.set_int ("window-width", window_width);
         settings.set_int ("window-height", window_height);
+        this.get_position (out window_x, out window_y);
+        settings.set_int ("window-x", window_x);
+        settings.set_int ("window-y", window_y);
         stdout.printf ( "thank you for playing wing commander :D\n" );
     }
 }
