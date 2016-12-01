@@ -26,10 +26,7 @@ class Window : Gtk.Window {
 
         this.set_border_width ( 12 );
         this.destroy.connect ( Gtk.main_quit );
-        this.delete_event.connect (() => {
-            on_quit ();
-            return false;
-        }); //FIXME: why does this have to be a fucking lamda?
+        this.delete_event.connect ( on_quit );
         
         this.add ( new HelloHouston(Gtk.Orientation.VERTICAL, 0) );
         
@@ -37,7 +34,7 @@ class Window : Gtk.Window {
         Gtk.main ();
     }
     
-    private void on_quit () {
+    private bool on_quit () {
         this.get_size (out window_width, out window_height);
         settings.set_int ("window-width", window_width);
         settings.set_int ("window-height", window_height);
@@ -45,5 +42,6 @@ class Window : Gtk.Window {
         settings.set_int ("window-x", window_x);
         settings.set_int ("window-y", window_y);
         stdout.printf ( "thank you for playing wing commander :D\n" );
+        return false;
     }
 }
