@@ -28,6 +28,7 @@ class Apollo11App : Granite.Application {
     
     public static int main ( string [] args ) {
         Gtk.init ( ref args );
+        Notify.init ("Apollo11");
         var app = new Apollo11App ();
         return app.run (args);
     }
