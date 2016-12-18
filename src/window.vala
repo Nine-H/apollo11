@@ -7,16 +7,16 @@ class Window : Gtk.Window {
     private int window_y = 0;
     
     public Window () {
-        settings = new Settings ("com.github.nine-h.apollo11");
-        window_width = settings.get_int ("window-width");
-        window_height = settings.get_int ("window-height");
+        settings = new Settings ( "com.github.nine-h.apollo11" );
+        window_width = settings.get_int ( "window-width" );
+        window_height = settings.get_int ( "window-height" );
         this.set_default_size ( window_width, window_height );
         
-        window_x = settings.get_int ("window-x");
-        window_y = settings.get_int ("window-y");
-        if ( settings.get_boolean ("first-run") ) {
+        window_x = settings.get_int ( "window-x" );
+        window_y = settings.get_int ( "window-y" );
+        if ( settings.get_boolean ( "first-run" ) ) {
             this.set_position ( Gtk.WindowPosition.CENTER );
-            settings.set_boolean ("first-run", false);
+            settings.set_boolean ( "first-run", false );
         } else {
             this.move ( window_x, window_y );
         }
@@ -28,7 +28,7 @@ class Window : Gtk.Window {
         this.destroy.connect ( Gtk.main_quit );
         this.delete_event.connect ( on_quit );
         
-        this.add ( new HelloHouston(Gtk.Orientation.VERTICAL, 0) );
+        this.add ( new HelloHouston() );
         
         show_all ();
         Gtk.main ();

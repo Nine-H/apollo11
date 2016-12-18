@@ -50,3 +50,7 @@ install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/apollo11.desktop DESTINATION ${D
 include (GSettings)
 add_schema ("data/com.github.nine-h.apollo11.gschema.xml")
 
+#translation files
+set (GETTEXT_PACKAGE "${CMAKE_PROJECT_NAME}")
+add_definitions (-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
+add_subdirectory (po)
