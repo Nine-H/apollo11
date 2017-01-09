@@ -18,7 +18,6 @@ find_package(PkgConfig)
 pkg_check_modules(DEPS REQUIRED
     gtk+-3.0
     granite
-    libnotify
 )
 
 add_definitions(${DEPS_CFLAGS})
@@ -39,13 +38,12 @@ vala_precompile(VALA_C ${EXEC_NAME}
 PACKAGES
     granite
     gtk+-3.0
-    libnotify
 )
 
 add_executable(${EXEC_NAME} ${VALA_C})
 
 install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)
-install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/apollo11.desktop DESTINATION ${DATADIR}/applications/)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/apollo11.app.desktop DESTINATION ${DATADIR}/applications/)
 
 include (GSettings)
 add_schema ("data/com.github.nine-h.apollo11.gschema.xml")

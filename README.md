@@ -12,6 +12,8 @@ The ultimate goal is to develop a skeleton to save developers starting from tabu
 * Window position saving and GSettings support.
 * AppData.xml for publishing in appcenter.
 * Granite.Application about window.
+* HeaderBar buttons example.
+* Notifications ready to go.
 
 ###get it:
 install the elementary OS SDK
@@ -34,3 +36,6 @@ cmake -DCMAKE_INSTALL_PREFIX=/usr ../
 make
 sudo make install
 ```
+
+###hacking:
+The best way to learn is to start reading, so I've tried to keep Apollo11 super light. You should check out hello_houston.vala to add widgets to the window and header.vala to add them to the headerbar, You can start changing your app to use a different name in apollo11.vala but I'll probably eventually make a graphical configurator to do this. This app also serves as a useful reference for backporting basic features and a build system for your own app/hack/shellcommand/w/e.

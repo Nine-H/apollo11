@@ -9,7 +9,7 @@ class Apollo11App : Granite.Application {
         exec_name = "apollo11";
         app_years = "2016";
         app_launcher =  "apollo11.desktop";
-        application_id = "com.github.nine-h.apollo11";
+        application_id = "apollo11.app";
         main_url = "https://github.com/Nine-H/apollo11";
         bug_url = "https://github.com/Nine-H/apollo11/issues";
         translate_url = "https://github.com/Nine-H/apollo11";
@@ -28,7 +28,7 @@ class Apollo11App : Granite.Application {
     
     public static int main ( string [] args ) {
         Gtk.init ( ref args );
-        Notify.init ("Apollo11");
+        //Notify.init ("Apollo11");
         var app = new Apollo11App ();
         return app.run (args);
     }

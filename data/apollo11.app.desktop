@@ -8,6 +8,7 @@ Icon=application-default-icon
 Terminal=false
 Type=Application
 X-GNOME-Gettext-Domain=apollo11
+X-GNOME-UsesNotifications=true
 Keywords=Hello;World;Example;
 Actions=About;
 
