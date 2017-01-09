@@ -44,6 +44,7 @@ add_executable(${EXEC_NAME} ${VALA_C})
 
 install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)
 install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/apollo11.app.desktop DESTINATION ${DATADIR}/applications/)
+install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/data/apollo11_test.svg" DESTINATION ${DATADIR}/pixmaps/)
 
 include (GSettings)
 add_schema ("data/com.github.nine-h.apollo11.gschema.xml")
